@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellonode.example.com
+  labels:
+    app: hellonode
+spec:
+  containers:
+    - name: hellonode-demo
+      image: gomn/hellonode
+      ports:
+        - containerPort: 3000
+    
