@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: hellonode.controller
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hellonode
+    spec:
+      containers:
+        - name: hellonode-demo
+          image: gomn/hellonode
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
+    
