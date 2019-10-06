@@ -1,9 +1,12 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hellonode.controller
+  name: hellonode-deployment
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: hellonode
   template:
     metadata:
       labels:

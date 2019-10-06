@@ -24,7 +24,30 @@
 | kubectl rollout undo deployment/...      | rollback to previous version    |
 | kubectl rollout undo ... --to-revision=n | rollback to specified version   |
 
-
+## commands
+* deploy hellonode app
+`kubectl create -f deployment/hellonode.yml`
+* get current deployment info
+`kubectl get deployments`
+* get replica sets
+`kubectl get rs`
+* get pods
+`kubectl get pods`
+* get pods with labels
+`kubectl get pods --show-labels`
+* get rollout status
+`kubectl rollout status -f deployment/hellonode.yml`
+### NodePort service
+* create NodePort service
+`kubectl expose deployment hellonode-deployment --type=NodePort`
+* get service
+`kubectl get service`
+* describe service
+`kubectl describe service hellonode-deployment`
+* get service url
+`minikube service hellonode-deployment --url`
+### delete deployment
+`kubectl scale deploy hellonode-deployment --replicas=0`
 
 
 
